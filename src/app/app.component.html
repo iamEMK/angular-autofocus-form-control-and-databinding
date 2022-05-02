@@ -1,0 +1,30 @@
+<hello name="{{ name }}"></hello>
+<div class="main">
+<table class="table table-hover">
+  <thead class="">
+    <tr class="table-primary table-dark">
+      <th>S.No</th>
+      <th>Name</th>
+      <th>Experience</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody *ngFor ="let data of dataSource; let i = index">
+    <tr *ngIf="i < 30">
+      <td>{{ data.id }}</td>
+      <td>{{ data.title }}</td>
+      <td>{{ data.completed }}</td>
+      <td>{{ data.userId }}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="left-side">
+  <div class="top">
+<input autofocus type="text" [(ngModel)] ="input" placeholder="add TODO list" style="float:left">
+<button class="btn btn-primary" [disabled]="input==='' "  (click)="arraypush() ; input=''" type ="submit" >SUBMIT</button>
+   
+</div>
+<p *ngFor= " let a of sampleArray; let j = index">{{a}}  </p>
+<!-- <span (click)="()=> {delete sampleArray[j]"> D</span> -->
+</div>
+</div>
